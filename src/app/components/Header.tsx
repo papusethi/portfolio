@@ -4,28 +4,6 @@ const Header: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [theme, setTheme] = useState('light');
 
-  const toggleHeaderBg = () => {
-    // Add a class if the bottom offset is greater than 50 of the viewport.
-    if (window.scrollY >= 50) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
-  };
-
-  window.addEventListener('scroll', toggleHeaderBg);
-
-  // Function to toggle theme
-  const toggleTheme = () => {
-    if (theme === 'light') {
-      setTheme('dark');
-      localStorage.setItem('selected-theme', 'dark');
-    } else {
-      setTheme('light');
-      localStorage.setItem('selected-theme', 'light');
-    }
-  };
-
   // On component mount, check if there's a previously selected theme.
   useEffect(() => {
     const selectedTheme = localStorage.getItem('selected-theme');
@@ -42,6 +20,56 @@ const Header: React.FC = () => {
       document.body.classList.remove('dark-theme');
     }
   }, [theme]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollDown = window.scrollY;
+
+      // Add a class if the bottom offset is greater than 50 of the viewport.
+      if (scrollDown >= 50) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+
+      // Find all sections with an id attribute
+      const sections = document.querySelectorAll('section[id]');
+
+      // Determine which section is currently active
+      sections.forEach((current) => {
+        const sectionId = current.getAttribute('id');
+        const sectionTop = current?.offsetTop - 58;
+        const sectionHeight = current?.offsetHeight;
+
+        const sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']');
+
+        if (scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight) {
+          sectionsClass?.classList.add('active-link');
+        } else {
+          sectionsClass?.classList.remove('active-link');
+        }
+      });
+    };
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Clean up
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []); // Only run on mount and unmount
+
+  // Function to toggle theme
+  const toggleTheme = () => {
+    if (theme === 'light') {
+      setTheme('dark');
+      localStorage.setItem('selected-theme', 'dark');
+    } else {
+      setTheme('light');
+      localStorage.setItem('selected-theme', 'light');
+    }
+  };
 
   return (
     <header className={`header ${isVisible && 'bg-header'}`} id="header">
