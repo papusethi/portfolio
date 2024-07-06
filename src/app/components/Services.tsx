@@ -3,19 +3,19 @@ import React from 'react';
 const Services: React.FC = () => {
   return (
     <section className="services section" id="services">
-      <h2 className="section__title">Services</h2>
-      <span className="section__subtitle">What i offer</span>
+      <h2 className="section__title">Competencies</h2>
+      <span className="section__subtitle">My core strengths</span>
 
       <div className="services__container container grid section__border">
         <div className="services__card">
           <i className="ri-layout-4-line" />
           <h2 className="services__title">
-            UI/UX <br />
-            Designer
+            Process <br />
+            Oriented
           </h2>
           <p className="services__description">
-            Service that provides the best quality and at the request of the client, with professional work and customer
-            support.
+            Prioritize structured workflows and systematic approaches to optimize efficiency and achieve consistent
+            results in project.
           </p>
           <div className="services__border" />
         </div>
@@ -23,12 +23,12 @@ const Services: React.FC = () => {
         <div className="services__card">
           <i className="ri-code-line" />
           <h2 className="services__title">
-            Website <br />
-            Design
+            Meets <br />
+            Standards
           </h2>
           <p className="services__description">
-            Service that provides the best quality and at the request of the client, with professional work and customer
-            support.
+            Adhere to industry best practices and established guidelines to maintain consistency, compatibility, and
+            reliability in projects.
           </p>
           <div className="services__border" />
         </div>
@@ -36,12 +36,12 @@ const Services: React.FC = () => {
         <div className="services__card">
           <i className="ri-quill-pen-line" />
           <h2 className="services__title">
-            Digital <br />
-            Animator
+            Delivers <br />
+            Quality
           </h2>
           <p className="services__description">
-            Service that provides the best quality and at the request of the client, with professional work and customer
-            support.
+            Ensure user satisfaction by emphasizing thorough testing, attention to detail, and continuous improvement in
+            project.
           </p>
           <div className="services__border" />
         </div>

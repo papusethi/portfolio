@@ -79,7 +79,7 @@ const Home: React.FC = () => {
           </div>
           <div>
             <h3 className="home__info-title">COMPANIES WORKED</h3>
-            <p className="home__info-number">01+</p>
+            <p className="home__info-number">01</p>
           </div>
         </div>
       </div>

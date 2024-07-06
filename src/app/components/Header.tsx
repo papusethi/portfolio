@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Header: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [theme, setTheme] = useState('light');
 
   const toggleHeaderBg = () => {
     // Add a class if the bottom offset is greater than 50 of the viewport.
@@ -13,6 +14,34 @@ const Header: React.FC = () => {
   };
 
   window.addEventListener('scroll', toggleHeaderBg);
+
+  // Function to toggle theme
+  const toggleTheme = () => {
+    if (theme === 'light') {
+      setTheme('dark');
+      localStorage.setItem('selected-theme', 'dark');
+    } else {
+      setTheme('light');
+      localStorage.setItem('selected-theme', 'light');
+    }
+  };
+
+  // On component mount, check if there's a previously selected theme.
+  useEffect(() => {
+    const selectedTheme = localStorage.getItem('selected-theme');
+    if (selectedTheme) {
+      setTheme(selectedTheme);
+    }
+  }, []);
+
+  // Add/remove dark-theme class based on current theme state.
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.body.classList.add('dark-theme');
+    } else {
+      document.body.classList.remove('dark-theme');
+    }
+  }, [theme]);
 
   return (
     <header className={`header ${isVisible && 'bg-header'}`} id="header">
@@ -41,11 +70,11 @@ const Header: React.FC = () => {
               </a>
             </li>
 
-            <li className="nav__item">
+            {/* <li className="nav__item">
               <a href="#services" className="nav__link">
                 <i className="ri-briefcase-line" /> Services
               </a>
-            </li>
+            </li> */}
 
             <li className="nav__item">
               <a href="#projects" className="nav__link">
@@ -68,7 +97,11 @@ const Header: React.FC = () => {
 
         <div className="nav__buttons">
           {/* Theme change button */}
-          <i className="ri-moon-line change-theme" id="theme-button" />
+          {theme === 'dark' ? (
+            <i className="ri-moon-line change-theme" id="theme-button" onClick={toggleTheme} />
+          ) : (
+            <i className="ri-sun-line change-theme" id="theme-button" onClick={toggleTheme} />
+          )}
 
           {/* Toggle button */}
           <div className="nav__toggle" id="nav-toggle">
