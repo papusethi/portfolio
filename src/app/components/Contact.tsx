@@ -16,80 +16,25 @@ const Contact: React.FC = () => {
               <span className="contact__data-title">Email</span>
               <span className="contact__data-info">mrpapusethi@gmail.com</span>
             </div>
-            <div className="contact__data">
-              <span className="contact__data-title">Whatsapp</span>
-              <span className="contact__data-info">+91 7016928866</span>
-              <a
-                href="https://api.whatsapp.com/send?phone=519876543210&text=Hello, more information!"
-                className="contact__button"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Write me <i className="ri-arrow-right-line" />
-              </a>
-            </div>
-            <div className="contact__data">
-              <span className="contact__data-title">Messenger</span>
-              <span className="contact__data-info">@papu.fb123</span>
-              <a href="https://m.me/bedimcode" className="contact__button" target="_blank" rel="noreferrer">
-                Write me <i className="ri-arrow-right-line" />
-              </a>
-            </div>
           </div>
         </div>
 
         <div className="contact__content">
           <h3 className="contact__title">
-            <i className="ri-send-plane-line" /> Write me your project
+            <i className="ri-send-plane-line" /> Follow me
           </h3>
-
-          <form action="" className="contact__form" id="contact-form">
-            <div className="contact__form-div">
-              <label htmlFor="contact-name" className="contact__form-tag">
-                Name
-              </label>
-              <input
-                type="text"
-                id="contact-name"
-                name="user_name"
-                placeholder="Write your name"
-                className="contact__form-input"
-                required
-              />
-            </div>
-
-            <div className="contact__form-div">
-              <label htmlFor="contact-email" className="contact__form-tag">
-                Mail
-              </label>
-              <input
-                type="text"
-                id="contact-email"
-                name="user_email"
-                placeholder="Write your email"
-                className="contact__form-input"
-                required
-              />
-            </div>
-
-            <div className="contact__form-div contact__form-area">
-              <label htmlFor="contact-project" className="contact__form-tag">
-                Project
-              </label>
-              <textarea
-                name="user_project"
-                id="contact-project"
-                className="contact__form-input"
-                placeholder="Write your project"
-              />
-            </div>
-            <p className="contact__message" id="contact-message">
-              Message
-            </p>
-            <button type="submit" className="contact__button">
-              Submit <i className="ri-arrow-right-up-line" />
-            </button>
-          </form>
+          <div className="contact__data">
+            <span className="contact__data-title">Whatsapp</span>
+            <span className="contact__data-info">+91 7016928866</span>
+            <a
+              href="https://api.whatsapp.com/send?phone=+917016928866&text=Hello, more information!"
+              className="contact__button"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Write me <i className="ri-arrow-right-line" />
+            </a>
+          </div>
         </div>
       </div>
     </section>
