@@ -15,7 +15,7 @@ const ScrollToTop: React.FC = () => {
   window.addEventListener('scroll', toggleVisibility);
 
   return (
-    <a href="/#" className={`scrollup ${isVisible && 'show-scroll'}`} id="scroll-up">
+    <a href="#home" className={`scrollup ${isVisible && 'show-scroll'}`} id="scroll-up">
       <i className="ri-arrow-up-line" />
     </a>
   );
