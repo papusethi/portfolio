@@ -103,7 +103,7 @@ const Header: React.FC = () => {
   return (
     <header className={`header ${isVisible && 'bg-header'}`} id="header">
       <nav className="nav container">
-        <a href="/#" className="nav__logo">
+        <a href="/" className="nav__logo">
           Papu Sethi
         </a>
 

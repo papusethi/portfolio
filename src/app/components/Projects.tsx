@@ -15,7 +15,7 @@ const Projects: React.FC = () => {
             <div>
               <span className="projects__subtitle">Web Application</span>
               <h1 className="projects__title">Supply Chain Management</h1>
-              <a href="https://blueyonder.com/" className="projects__button">
+              <a href="https://blueyonder.com/" className="projects__button" target="_blank" rel="noreferrer">
                 Visit site <i className="ri-arrow-right-line" />
               </a>
             </div>
