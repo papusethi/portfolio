@@ -1,35 +1,39 @@
 import Link from "next/link";
 import React from "react";
 
-const footer = () => {
-  const linksConfig = [
-    { path: "/about", title: "About" },
-    { path: "/projects", title: "Projects" },
-    { path: "/speaking", title: "Speaking" },
-    { path: "/uses", title: "Uses" }
-  ];
+const linksConfig = [
+  { path: "/about", title: "About" },
+  { path: "/articles", title: "Articles" },
+  { path: "/projects", title: "Projects" },
+  { path: "/uses", title: "Uses" }
+];
 
+const Footer = () => {
   return (
-    <div className="px-8 pt-10 pb-16">
-      <div className="flex gap-8 justify-between items-center">
-        <div>
-          <ul className="flex justify-between items-center gap-6">
-            {linksConfig.map(({ path, title }) => (
-              <li key={title}>
-                <Link href={path} className="text-sm text-zinc-800 dark:text-zinc-100 hover:text-teal-500">
-                  {title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+    <div className="sm:px-8">
+      <div className="mx-auto w-full max-w-7xl">
+        <div className="relative px-4 sm:px-8 lg:px-12">
+          <div className="pt-10 pb-16">
+            {/* --- start editing from here --- */}
+            <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
+              <ul className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-zinc-800 dark:text-zinc-200">
+                {linksConfig.map(({ path, title }) => (
+                  <li key={title}>
+                    <Link href={path} className="transition hover:text-teal-500 dark:hover:text-teal-400">
+                      {title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
 
-        <div>
-          <p className="text-sm text-zinc-400 dark:text-zinc-100">&copy; 2024 Spencer Sharp. All rights reserved.</p>
+              <p className="text-sm text-zinc-400 dark:text-zinc-500">&copy; 2024 Papu Sethi. All rights reserved.</p>
+            </div>
+            {/* --- end editing till here --- */}
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default footer;
+export default Footer;
