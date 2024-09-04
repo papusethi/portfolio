@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const footer = () => {
@@ -14,8 +15,10 @@ const footer = () => {
         <div>
           <ul className="flex justify-between items-center gap-6">
             {linksConfig.map(({ path, title }) => (
-              <li key={title} className="text-sm text-zinc-800 dark:text-zinc-100 hover:text-teal-500">
-                <a href={path}>{title}</a>
+              <li key={title}>
+                <Link href={path} className="text-sm text-zinc-800 dark:text-zinc-100 hover:text-teal-500">
+                  {title}
+                </Link>
               </li>
             ))}
           </ul>

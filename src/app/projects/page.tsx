@@ -1,40 +1,47 @@
-import { Link } from "lucide-react";
+import { Link as LinkIcon } from "lucide-react";
+import { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
-const projects = () => {
-  const projectsConfig = [
-    {
-      favicon: "https://spotlight.tailwindui.com/_next/static/media/planetaria.ecd81ade.svg",
-      name: "Planetaria",
-      description: "Creating technology to empower civilians to explore space on their own terms.",
-      githubLink: "github.com"
-    },
-    {
-      favicon: "https://spotlight.tailwindui.com/_next/static/media/animaginary.8d221e52.svg",
-      name: "Animaginary",
-      description: "High performance web animation library, hand-written in optimized WASM.",
-      githubLink: "github.com"
-    },
-    {
-      favicon: "https://spotlight.tailwindui.com/_next/static/media/helio-stream.2ac8d11f.svg",
-      name: "HelioStream",
-      description: "Real-time video streaming library, optimized for interstellar transmission.",
-      githubLink: "github.com"
-    },
-    {
-      favicon: "https://spotlight.tailwindui.com/_next/static/media/cosmos.c70b0295.svg",
-      name: "CosmOS",
-      description: "The operating system that powers our Planetaria space shuttles.",
-      githubLink: "github.com"
-    },
-    {
-      favicon: "https://spotlight.tailwindui.com/_next/static/media/open-shuttle.db0327e4.svg",
-      name: "OpenShuttle",
-      description: "The schematics for the first rocket I designed that successfully made it to orbit.",
-      githubLink: "github.com"
-    }
-  ];
+const projectsConfig = [
+  {
+    favicon: "https://spotlight.tailwindui.com/_next/static/media/planetaria.ecd81ade.svg",
+    name: "Planetaria",
+    description: "Creating technology to empower civilians to explore space on their own terms.",
+    githubLink: "github.com"
+  },
+  {
+    favicon: "https://spotlight.tailwindui.com/_next/static/media/animaginary.8d221e52.svg",
+    name: "Animaginary",
+    description: "High performance web animation library, hand-written in optimized WASM.",
+    githubLink: "github.com"
+  },
+  {
+    favicon: "https://spotlight.tailwindui.com/_next/static/media/helio-stream.2ac8d11f.svg",
+    name: "HelioStream",
+    description: "Real-time video streaming library, optimized for interstellar transmission.",
+    githubLink: "github.com"
+  },
+  {
+    favicon: "https://spotlight.tailwindui.com/_next/static/media/cosmos.c70b0295.svg",
+    name: "CosmOS",
+    description: "The operating system that powers our Planetaria space shuttles.",
+    githubLink: "github.com"
+  },
+  {
+    favicon: "https://spotlight.tailwindui.com/_next/static/media/open-shuttle.db0327e4.svg",
+    name: "OpenShuttle",
+    description: "The schematics for the first rocket I designed that successfully made it to orbit.",
+    githubLink: "github.com"
+  }
+];
 
+export const metadata: Metadata = {
+  title: "Projects - Papu Sethi",
+  description: "A Professional Software Engineer"
+};
+
+const Projects = () => {
   return (
     <div className="px-8 pt-10 pb-16 relative">
       <div className="w-4/6">
@@ -64,8 +71,10 @@ const projects = () => {
               </div>
 
               <div className="mt-2 text-sm text-zinc-400 dark:text-zinc-500 flex gap-2 items-center hover:text-teal-500">
-                <Link size={16} />
-                <a href={githubLink}>{githubLink}</a>
+                <span>
+                  <LinkIcon size={16} />
+                </span>
+                <Link href={githubLink}>{githubLink}</Link>
               </div>
             </div>
           ))}
@@ -77,4 +86,4 @@ const projects = () => {
   );
 };
 
-export default projects;
+export default Projects;

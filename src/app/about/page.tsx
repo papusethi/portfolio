@@ -1,5 +1,7 @@
 import { Github, Instagram, Linkedin, Mail } from "lucide-react";
+import { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 export const socialLinksConfig = [
   {
@@ -22,7 +24,12 @@ export const socialLinksConfig = [
   }
 ];
 
-const about = () => {
+export const metadata: Metadata = {
+  title: "About - Papu Sethi",
+  description: "A Professional Software Engineer"
+};
+
+const About = () => {
   const profileImgLink = "/portrait.webp";
 
   const mailLinksConfig = [
@@ -69,33 +76,33 @@ const about = () => {
         <div className="mt-16">
           <ul className="my-6 flex flex-col gap-3">
             {socialLinksConfig.map(({ icon, name, title, link }) => (
-              <li key={name} className="flex">
-                <a
+              <li key={name}>
+                <Link
                   href={link}
                   className="flex items-center text-sm text-zinc-600 transition hover:text-teal-500 dark:text-zinc-400 dark:hover:text-teal-500"
                 >
                   <span>{icon}</span>
-                  <p className="ml-4">{title}</p>
-                </a>
+                  <span className="ml-4">{title}</span>
+                </Link>
               </li>
             ))}
           </ul>
 
           <div className="border-t w-5/6" />
 
-          <div className="my-6 flex flex-col gap-3">
+          <ul className="my-6 flex flex-col gap-3">
             {mailLinksConfig.map(({ icon, name, title, link }) => (
-              <div key={name}>
-                <a
+              <li key={name}>
+                <Link
                   href={link}
                   className="flex items-center text-sm text-zinc-600 transition hover:text-teal-500 dark:text-zinc-400 dark:hover:text-teal-500"
                 >
                   <span>{icon}</span>
-                  <p className="ml-4">{title}</p>
-                </a>
-              </div>
+                  <span className="ml-4">{title}</span>
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
 
@@ -104,4 +111,4 @@ const about = () => {
   );
 };
 
-export default about;
+export default About;

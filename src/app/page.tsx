@@ -1,40 +1,47 @@
 import { ArrowDown, BriefcaseBusiness, ChevronRight, Mail } from "lucide-react";
+import { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { socialLinksConfig } from "./about/page";
 import { articlesConfig } from "./articles/page";
 
-const home = () => {
-  const worksConfig = [
-    {
-      favicon: "https://spotlight.tailwindui.com/_next/static/media/planetaria.ecd81ade.svg",
-      company: "Planetaria",
-      role: "CEO",
-      startDate: "2019",
-      endDate: "Present"
-    },
-    {
-      favicon: "https://spotlight.tailwindui.com/_next/static/media/airbnb.b4000690.svg",
-      company: "Airbnb",
-      role: "Product Designer",
-      startDate: "2014",
-      endDate: "2019"
-    },
-    {
-      favicon: "https://spotlight.tailwindui.com/_next/static/media/facebook.dd9e7d48.svg",
-      company: "Facebook",
-      role: "iOS Software Engineer",
-      startDate: "2011",
-      endDate: "2014"
-    },
-    {
-      favicon: "https://spotlight.tailwindui.com/_next/static/media/starbucks.4a5bd050.svg",
-      company: "Starbucks",
-      role: "Shift Supervisor",
-      startDate: "2008",
-      endDate: "2011"
-    }
-  ];
+const worksConfig = [
+  {
+    favicon: "https://spotlight.tailwindui.com/_next/static/media/planetaria.ecd81ade.svg",
+    company: "Planetaria",
+    role: "CEO",
+    startDate: "2019",
+    endDate: "Present"
+  },
+  {
+    favicon: "https://spotlight.tailwindui.com/_next/static/media/airbnb.b4000690.svg",
+    company: "Airbnb",
+    role: "Product Designer",
+    startDate: "2014",
+    endDate: "2019"
+  },
+  {
+    favicon: "https://spotlight.tailwindui.com/_next/static/media/facebook.dd9e7d48.svg",
+    company: "Facebook",
+    role: "iOS Software Engineer",
+    startDate: "2011",
+    endDate: "2014"
+  },
+  {
+    favicon: "https://spotlight.tailwindui.com/_next/static/media/starbucks.4a5bd050.svg",
+    company: "Starbucks",
+    role: "Shift Supervisor",
+    startDate: "2008",
+    endDate: "2011"
+  }
+];
 
+export const metadata: Metadata = {
+  title: "Papu Sethi - Software designer, founder, and amateur astronaut.",
+  description: "A Professional Software Engineer"
+};
+
+const Home = () => {
   return (
     <div className="px-8 pt-10 pb-16 relative">
       <div className="w-4/6">
@@ -47,15 +54,15 @@ const home = () => {
         </p>
 
         <div className="mt-6">
-          <div className="flex items-center gap-6">
+          <ul className="flex items-center gap-6">
             {socialLinksConfig.map(({ icon, name, title, link }) => (
-              <div key={name} className="inline-block">
-                <a href={link} className="text-zinc-600 hover:text-teal-500">
+              <li key={name}>
+                <Link href={link} className="text-zinc-600 hover:text-teal-500">
                   <span>{icon}</span>
-                </a>
-              </div>
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
 
@@ -113,10 +120,12 @@ const home = () => {
                   <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-3 leading-relaxed">{description}</p>
                 </div>
                 <div className="mt-4">
-                  <a href={link} className="text-sm font-medium text-teal-500 inline-flex items-center">
+                  <Link href={link} className="text-sm font-medium text-teal-500 inline-flex items-center">
                     <span>Read article</span>
-                    <ChevronRight size={16} />
-                  </a>
+                    <span>
+                      <ChevronRight size={16} />
+                    </span>
+                  </Link>
                 </div>
               </article>
             ))}
@@ -196,8 +205,8 @@ const home = () => {
             <div className="mt-6">
               <button className="w-full rounded-md bg-zinc-100 text-sm px-3 py-2 hover:bg-zinc-200 flex justify-center items-center gap-2">
                 <span>Download CV</span>
-                <span className="text-gray-500">
-                  <ArrowDown size={16} />
+                <span>
+                  <ArrowDown size={16} className="text-gray-500" />
                 </span>
               </button>
             </div>
@@ -210,4 +219,4 @@ const home = () => {
   );
 };
 
-export default home;
+export default Home;

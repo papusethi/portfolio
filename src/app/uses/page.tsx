@@ -1,6 +1,11 @@
-import React from "react";
+import { Metadata } from "next";
 
-const uses = () => {
+export const metadata: Metadata = {
+  title: "Speaking - Papu Sethi",
+  description: "A Professional Software Engineer"
+};
+
+const Uses = () => {
   return (
     <div className="px-8 pt-10 pb-16 relative">
       <div className="w-4/6">
@@ -149,4 +154,4 @@ const uses = () => {
   );
 };
 
-export default uses;
+export default Uses;

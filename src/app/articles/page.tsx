@@ -1,4 +1,6 @@
 import { ChevronRight } from "lucide-react";
+import { Metadata } from "next";
+import Link from "next/link";
 
 export const articlesConfig = [
   {
@@ -24,7 +26,12 @@ export const articlesConfig = [
   }
 ];
 
-const articles = () => {
+export const metadata: Metadata = {
+  title: "Articles - Papu Sethi",
+  description: "A Professional Software Engineer"
+};
+
+const Articles = () => {
   return (
     <div className="px-8 pt-10 pb-16 relative">
       <div className="w-4/6">
@@ -54,10 +61,12 @@ const articles = () => {
                     <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-3 leading-relaxed">{description}</p>
                   </div>
                   <div className="mt-4">
-                    <a href={link} className="text-sm font-medium text-teal-500 inline-flex items-center">
+                    <Link href={link} className="text-sm font-medium text-teal-500 inline-flex items-center">
                       <span>Read article</span>
-                      <ChevronRight size={16} />
-                    </a>
+                      <span>
+                        <ChevronRight size={16} />
+                      </span>
+                    </Link>
                   </div>
                 </article>
               </div>
@@ -71,4 +80,4 @@ const articles = () => {
   );
 };
 
-export default articles;
+export default Articles;

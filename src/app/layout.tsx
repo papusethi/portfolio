@@ -1,17 +1,11 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
-import type { Metadata } from "next";
 import "./globals.css";
-
-export const metadata: Metadata = {
-  title: "Papu Sethi",
-  description: "A Professional Software Engineer"
-};
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className="px-40">
+      <body className="mx-auto px-4 w-full sm:w-8/12">
         <Header />
         {children}
         <Footer />
