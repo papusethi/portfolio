@@ -33,49 +33,58 @@ export const metadata: Metadata = {
 
 const Articles = () => {
   return (
-    <div className="px-8 pt-10 pb-16 relative">
-      <div className="w-4/6">
-        <h1 className="text-4xl font-bold text-zinc-800 sm:text-5xl dark:text-zinc-100">
-          Writing on software design, company building, and the aerospace industry.
-        </h1>
-        <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
-          All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological
-          order.
-        </p>
-      </div>
+    <div>
+      <div className="sm:px-8 my-16 sm:my-32">
+        <div className="mx-auto w-full max-w-7xl lg:px-8">
+          <div className="relative px-4 sm:px-8 lg:px-12">
+            {/* start editing from here */}
+            {/* start header and desc */}
+            <div className="max-w-2xl">
+              <h1 className="text-4xl font-bold sm:text-5xl text-zinc-800 dark:text-zinc-100">
+                Writing on software design, company building, and the aerospace industry.
+              </h1>
+              <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+                All of my long-form thoughts on programming, leadership, product design, and more, collected in
+                chronological order.
+              </p>
+            </div>
+            {/* end header and desc */}
 
-      <div className="w-5/6">
-        <div className="border-l">
-          {articlesConfig.map(({ datetime, name, description, link }) => (
-            <div key={name} className="mt-16 flex gap-4">
-              <div className="w-1/4 pl-4">
-                <time dateTime={datetime} className="text-sm text-zinc-400 dark:text-zinc-500">
-                  {datetime}
-                </time>
-              </div>
+            <div className="mt-16 sm:mt-20">
+              <div className="max-w-3xl">
+                <div className="md:border-l md:border-zinc-200 md:pl-6 md:dark:border-zinc-700/50 space-y-12">
+                  {articlesConfig.map(({ datetime, name, description, link }) => (
+                    <article key={name} className="md:grid md:grid-cols-4 md:items-baseline">
+                      <div className="mb-3">
+                        <time
+                          dateTime={datetime}
+                          className="text-sm text-zinc-400 dark:text-zinc-500 border-l-2 border-zinc-200 dark:border-zinc-700/50 pl-2 md:border-l-0"
+                        >
+                          {datetime}
+                        </time>
+                      </div>
 
-              <div className="w-3/4">
-                <article>
-                  <div>
-                    <h3 className="text-base font-semibold text-zinc-800 dark:text-zinc-100">{name}</h3>
-                    <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-3 leading-relaxed">{description}</p>
-                  </div>
-                  <div className="mt-4">
-                    <Link href={link} className="text-sm font-medium text-teal-500 inline-flex items-center">
-                      <span>Read article</span>
-                      <span>
-                        <ChevronRight size={16} />
-                      </span>
-                    </Link>
-                  </div>
-                </article>
+                      <div className="md:col-span-3">
+                        <h2 className="text-base font-semibold text-zinc-800 dark:text-zinc-100">{name}</h2>
+                        <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">{description}</p>
+
+                        <div className="mt-4">
+                          <Link href={link} className="text-sm font-medium text-teal-500 inline-flex items-center">
+                            <span>Read article</span>
+                            <ChevronRight size={16} />
+                          </Link>
+                        </div>
+                      </div>
+                    </article>
+                  ))}
+                </div>
               </div>
             </div>
-          ))}
+
+            {/* end editing till here */}
+          </div>
         </div>
       </div>
-
-      <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-teal-500/0 via-teal-500/40 to-teal-500/0 dark:from-teal-400/0 dark:via-teal-400/40 dark:to-teal-400/0"></span>
     </div>
   );
 };

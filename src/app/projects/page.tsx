@@ -61,7 +61,7 @@ const Projects = () => {
           {/* end header and desc */}
 
           <div className="mt-16 sm:mt-20">
-            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8">
               {projectsConfig.map(({ favicon, name, description, githubLink }) => (
                 <li
                   key={name}
