@@ -45,9 +45,8 @@ const About = () => {
     <div className="sm:px-8 my-16 sm:my-32">
       <div className="mx-auto w-full max-w-7xl lg:px-8">
         <div className="relative px-4 sm:px-8 lg:px-12">
-          {/* start editing from here */}
-
           <div className="mx-auto max-w-2xl lg:max-w-5xl">
+            {/* start editing from here */}
             <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
               <div className="lg:pl-20">
                 <Image src={profileImgLink} alt="Profile" width={300} height={300} className="rounded-xl rotate-3" />
@@ -117,9 +116,8 @@ const About = () => {
                 </div>
               </div>
             </div>
+            {/* end editing till here */}
           </div>
-
-          {/* end editing till here */}
         </div>
       </div>
     </div>

@@ -44,35 +44,37 @@ export const metadata: Metadata = {
 const Home = () => {
   return (
     <div>
-      <div className="sm:px-8 my-16 sm:my-32">
+      <div className="sm:px-8 mt-16 sm:mt-20">
         <div className="mx-auto w-full max-w-7xl lg:px-8">
           <div className="relative px-4 sm:px-8 lg:px-12">
-            {/* start header and desc */}
-            <div className="max-w-2xl">
-              <h1 className="text-4xl font-bold sm:text-5xl text-zinc-800 dark:text-zinc-100">
-                Software designer, founder, and amateur astronaut.
-              </h1>
-              <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-                I’m Spencer, a software designer and entrepreneur based in New York City. I’m the founder and CEO of
-                Planetaria, where we develop technologies that empower regular people to explore space on their own
-                terms.
-              </p>
-            </div>
-            {/* end header and desc */}
+            <div className="mx-auto max-w-2xl lg:max-w-5xl">
+              {/* start header and desc */}
+              <div className="max-w-2xl">
+                <h1 className="text-4xl font-bold sm:text-5xl text-zinc-800 dark:text-zinc-100">
+                  Software designer, founder, and amateur astronaut.
+                </h1>
+                <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+                  I’m Spencer, a software designer and entrepreneur based in New York City. I’m the founder and CEO of
+                  Planetaria, where we develop technologies that empower regular people to explore space on their own
+                  terms.
+                </p>
 
-            {/* start social links */}
-            <div className="mt-6">
-              <ul className="flex items-center gap-6">
-                {socialLinksConfig.map(({ icon, name, title, link }) => (
-                  <li key={name}>
-                    <Link href={link} className="text-zinc-600 hover:text-teal-500" aria-label={title}>
-                      {icon}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+                {/* start social links */}
+                <div className="mt-6">
+                  <ul className="flex items-center gap-6">
+                    {socialLinksConfig.map(({ icon, name, title, link }) => (
+                      <li key={name}>
+                        <Link href={link} className="text-zinc-600 hover:text-teal-500" aria-label={title}>
+                          {icon}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                {/* end social links */}
+              </div>
+              {/* end header and desc */}
             </div>
-            {/* end social links */}
           </div>
         </div>
       </div>
@@ -118,13 +120,13 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="sm:px-8 mt-16 sm:my-32">
+      <div className="sm:px-8 mt-24 sm:mt-28">
         <div className="mx-auto w-full max-w-7xl lg:px-8">
           <div className="relative px-4 sm:px-8 lg:px-12">
-            {/* start article and form */}
             <div className="mx-auto max-w-2xl lg:max-w-5xl">
-              <div className="mx-auto grid grid-cols-1 gap-y-20 max-w-xl lg:max-w-none lg:grid-cols-2">
-                <div className="space-y-12">
+              {/* start article and form */}
+              <div className="grid grid-cols-1 gap-y-20 lg:grid-cols-2">
+                <div className="flex flex-col gap-12">
                   {articlesConfig.map(({ datetime, name, description, link }) => (
                     <article key={name}>
                       <div className="mb-3">
@@ -191,7 +193,7 @@ const Home = () => {
                       <ol className="space-y-4">
                         {worksConfig.map(({ favicon, company, role, startDate, endDate }) => (
                           <li key={company} className="flex gap-4 items-center">
-                            <div className="relative mt-1 w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+                            <div className="relative mt-1 h-10 w-10 flex flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
                               <Image src={favicon} alt={company} width={32} height={32} className="h-7 w-7" />
                             </div>
 
@@ -231,8 +233,8 @@ const Home = () => {
                   {/* work end */}
                 </div>
               </div>
+              {/* end article and forms */}
             </div>
-            {/* end article and forms */}
           </div>
         </div>
       </div>
