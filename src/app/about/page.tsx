@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 };
 
 const About = () => {
-  const profileImgLink = "/portrait.webp";
+  const profileImgLink = "/portrait.jpg";
 
   const mailLinksConfig = [
     {
@@ -49,12 +49,18 @@ const About = () => {
             {/* start editing from here */}
             <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
               <div className="lg:pl-20">
-                <Image src={profileImgLink} alt="Profile" width={300} height={300} className="rounded-xl rotate-3" />
+                <Image
+                  src={profileImgLink}
+                  alt="Profile"
+                  width={300}
+                  height={300}
+                  className="rounded-xl rotate-3 bg-white/90 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
+                />
               </div>
 
               <div className="lg:order-first lg:row-span-2">
                 <h1 className="text-4xl font-bold text-zinc-800 sm:text-5xl dark:text-zinc-100">
-                  I’m Spencer Sharp. I live in New York City, where I design the future.
+                  I&apos;m Papu Sethi. I live in Hyderabad City, where I develop for the future.
                 </h1>
                 <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
                   <p>

@@ -1,15 +1,16 @@
-import { ArrowBigDown, ChevronDown, Moon } from "lucide-react";
+import { Moon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import NavDrawer from "./nav-drawer";
+
+export const navConfig = [
+  { path: "/about", title: "About" },
+  { path: "/articles", title: "Articles" },
+  { path: "/projects", title: "Projects" },
+  { path: "/uses", title: "Uses" }
+];
 
 const header = () => {
-  const navConfig = [
-    { path: "/about", title: "About" },
-    { path: "/articles", title: "Articles" },
-    { path: "/projects", title: "Projects" },
-    { path: "/uses", title: "Uses" }
-  ];
-
   return (
     <header className="my-8">
       <div className="sm:px-8">
@@ -31,9 +32,7 @@ const header = () => {
                 </div>
 
                 <div className="flex-1 flex justify-end md:justify-center">
-                  <button className="rounded-3xl ring-1 bg-white/90 dark:bg-zinc-800/90 ring-zinc-900/5 px-3 py-2 shadow text-zinc-800 hover:text-teal-500 flex items-center justify-center text-sm md:hidden">
-                    Menu <ChevronDown size={16} className="ml-1" />
-                  </button>
+                  <NavDrawer />
 
                   <nav className="hidden md:block">
                     <ul className="flex rounded-full bg-white/90 px-3 text-sm text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
@@ -53,7 +52,7 @@ const header = () => {
                 </div>
 
                 <div>
-                  <button className="rounded-full ring-1 bg-white/90 dark:bg-zinc-800/90 ring-zinc-900/5 px-3 py-2 shadow text-gray-500 hover:text-teal-500">
+                  <button className="flex items-center rounded-full bg-white/90 p-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20">
                     <Moon size={20} />
                   </button>
                 </div>

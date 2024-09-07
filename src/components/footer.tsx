@@ -1,12 +1,5 @@
 import Link from "next/link";
-import React from "react";
-
-const linksConfig = [
-  { path: "/about", title: "About" },
-  { path: "/articles", title: "Articles" },
-  { path: "/projects", title: "Projects" },
-  { path: "/uses", title: "Uses" }
-];
+import { navConfig } from "./header";
 
 const Footer = () => {
   return (
@@ -19,7 +12,7 @@ const Footer = () => {
                 {/* --- start editing from here --- */}
                 <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
                   <ul className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-zinc-800 dark:text-zinc-200">
-                    {linksConfig.map(({ path, title }) => (
+                    {navConfig.map(({ path, title }) => (
                       <li key={title}>
                         <Link href={path} className="transition hover:text-teal-500 dark:hover:text-teal-400">
                           {title}
