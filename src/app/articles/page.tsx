@@ -57,7 +57,7 @@ const Articles = () => {
                     <div className="mb-3">
                       <time
                         dateTime={datetime}
-                        className="text-sm text-zinc-400 dark:text-zinc-500 border-l-2 border-zinc-200 dark:border-zinc-700/50 pl-2 md:border-l-0"
+                        className="text-sm text-zinc-400 dark:text-zinc-500 border-l-2 border-zinc-200 dark:border-zinc-500/50 pl-2 md:border-l-0"
                       >
                         {datetime}
                       </time>
