@@ -7,32 +7,18 @@ import { articlesConfig } from "./articles/page";
 
 const worksConfig = [
   {
-    favicon: "https://spotlight.tailwindui.com/_next/static/media/planetaria.ecd81ade.svg",
-    company: "Planetaria",
-    role: "CEO",
-    startDate: "2019",
+    favicon: "/blueyonder-logo.jpg",
+    company: "Blue Yonder",
+    role: "Software Engineer",
+    startDate: "2022",
     endDate: "Present"
   },
   {
-    favicon: "https://spotlight.tailwindui.com/_next/static/media/airbnb.b4000690.svg",
-    company: "Airbnb",
-    role: "Product Designer",
-    startDate: "2014",
-    endDate: "2019"
-  },
-  {
-    favicon: "https://spotlight.tailwindui.com/_next/static/media/facebook.dd9e7d48.svg",
-    company: "Facebook",
-    role: "iOS Software Engineer",
-    startDate: "2011",
-    endDate: "2014"
-  },
-  {
-    favicon: "https://spotlight.tailwindui.com/_next/static/media/starbucks.4a5bd050.svg",
-    company: "Starbucks",
-    role: "Shift Supervisor",
-    startDate: "2008",
-    endDate: "2011"
+    favicon: "/divami-logo.png",
+    company: "Divami Design Labs",
+    role: "Software Engineer",
+    startDate: "2022",
+    endDate: "Present"
   }
 ];
 
@@ -198,7 +184,13 @@ const Home = () => {
                         {worksConfig.map(({ favicon, company, role, startDate, endDate }) => (
                           <li key={company} className="flex gap-4 items-center">
                             <div className="relative mt-1 h-10 w-10 flex flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-                              <Image src={favicon} alt={company} width={32} height={32} className="h-7 w-7" />
+                              <Image
+                                src={favicon}
+                                alt={company}
+                                width={32}
+                                height={32}
+                                className="h-7 w-7 rounded-full"
+                              />
                             </div>
 
                             <dl className="flex flex-auto flex-wrap gap-x-2 gap-y-1">
@@ -226,7 +218,8 @@ const Home = () => {
 
                     <div className="mt-6">
                       <a
-                        href="/#"
+                        href="/PapuSethi_Resume.pdf"
+                        download
                         className="inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-zinc-50 font-medium text-zinc-900 hover:bg-zinc-100 active:bg-zinc-100 active:text-zinc-900/60 dark:bg-zinc-800/50 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 dark:active:bg-zinc-800/50 dark:active:text-zinc-50/70 group mt-6 w-full"
                       >
                         Download CV

@@ -10,7 +10,7 @@ export const navConfig = [
   { path: "/uses", title: "Uses" }
 ];
 
-const header = () => {
+const Header = () => {
   return (
     <header className="my-8">
       <div className="sm:px-8">
@@ -66,4 +66,4 @@ const header = () => {
   );
 };
 
-export default header;
+export default Header;

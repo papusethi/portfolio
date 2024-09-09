@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { navConfig } from "./header";
 
-export default function Example() {
+const NavDrawer = () => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -68,4 +68,6 @@ export default function Example() {
       </Dialog>
     </>
   );
-}
+};
+
+export default NavDrawer;
