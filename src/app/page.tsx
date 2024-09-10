@@ -40,7 +40,7 @@ const Home = () => {
                   Software engineer, founder, and amateur astronaut.
                 </h1>
                 <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-                  I&apos;m Papu, a software engineer and self-learner based in Hyderabad City. Passionate about
+                  I&apos;m Papu, a software engineer and self-learner based in Hyderabad city. Passionate about
                   leveraging cutting-edge technologies to tackle real-world challenges. My focus lies in crafting and
                   delivering high-quality products that exceed expectations.
                 </p>
