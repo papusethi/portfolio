@@ -1,10 +1,10 @@
 "use client";
 
+import { navLinks } from "@/constants/navLinks";
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
 import { ChevronDown, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-import { navConfig } from "./header";
 
 const NavDrawer = () => {
   const [open, setOpen] = useState(false);
@@ -46,7 +46,7 @@ const NavDrawer = () => {
                   <div className="relative mt-6 flex-1">
                     <nav>
                       <ul className="divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
-                        {navConfig.map(({ path, title }) => (
+                        {navLinks.map(({ path, title }) => (
                           <li key={title} className="relative">
                             <Link
                               href={path}

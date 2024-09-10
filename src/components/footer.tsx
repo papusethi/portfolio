@@ -1,5 +1,5 @@
+import { navLinks } from "@/constants/navLinks";
 import Link from "next/link";
-import { navConfig } from "./header";
 
 const Footer = () => {
   return (
@@ -12,7 +12,7 @@ const Footer = () => {
                 {/* --- start editing from here --- */}
                 <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
                   <ul className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-zinc-800 dark:text-zinc-200">
-                    {navConfig.map(({ path, title }) => (
+                    {navLinks.map(({ path, title }) => (
                       <li key={title}>
                         <Link href={path} className="transition hover:text-teal-500 dark:hover:text-teal-400">
                           {title}
