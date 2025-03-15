@@ -8,7 +8,7 @@ const montserrat = Montserrat({ subsets: ['latin'] });
 
 const title = 'Papu Sethi | Frontend Developer From India.';
 const description = 'A frontend developer who turns ideas into interactive experiences.';
-const url = 'https://notekeeper-a4jn.onrender.com';
+const url = 'https://portfolio-ad24.onrender.com/';
 
 export const metadata: Metadata = {
   metadataBase: new URL(url),
